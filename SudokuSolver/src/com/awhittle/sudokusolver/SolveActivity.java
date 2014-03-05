@@ -18,6 +18,7 @@ public class SolveActivity extends Activity {
 		
 		TextView tv = (TextView)findViewById(R.id.textViewSolution);
 		Grid.setRowCol(0, 0);
+		Grid.setGridBool();
 		
 		Solve.bruteForce();
 		Grid.printMatrix(tv, Grid.grid);

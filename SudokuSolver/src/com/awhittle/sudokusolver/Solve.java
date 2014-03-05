@@ -31,6 +31,10 @@ public class Solve {
 			Grid.row -= 1;
 		}
 		
+		if(Grid.gridBool[Grid.row][Grid.col]){
+			backstep();
+		}
+		
 	}
 
 	private static void findNext() {

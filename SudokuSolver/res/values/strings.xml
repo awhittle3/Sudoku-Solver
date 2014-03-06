@@ -26,5 +26,6 @@
     <string name="back">Back</string>
     <string name="clearQuery">Clear data?</string>
     <string name="yes">Yes</string>
+    <string name="errorInvalid">ERROR: Invalid Sudoku input</string>
 
 </resources>

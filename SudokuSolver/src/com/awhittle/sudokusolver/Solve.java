@@ -61,7 +61,7 @@ public class Solve {
 		return true;
 	}
 
-	private static boolean noConflicts(int n) {
+	public static boolean noConflicts(int n) {
 		if (rowGood(n) && colGood(n) && sectorGood(n)){
 			return true;
 		} else {

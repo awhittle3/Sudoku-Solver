@@ -18,15 +18,20 @@ public class SolveActivity extends Activity {
 		super.onResume();
 		
 		TextView tv = (TextView)findViewById(R.id.textViewSolution);
+		
+		//Reset row, column and boolean markers
 		Grid.setRowCol(0, 0);
 		Grid.setGridBool();
 		
 		if (isValidGrid()){
+			//Solve recursively by brute force
 			Solve.bruteForce();
 		} else {
+			//Error, grid is invalid, send a message
 			Toast.makeText(this, R.string.errorInvalid, Toast.LENGTH_LONG).show();
 		}
 		
+		//Print the grid
 		Grid.printMatrix(tv, Grid.grid);
 
 
@@ -36,9 +41,11 @@ public class SolveActivity extends Activity {
 		for(int i = 0; i < 9; i++){
 			for(int j = 0; j < 9; j++){
 				if(Grid.gridBool[i][j]){
+					//Set row and column to current location
 					Grid.row = i;
 					Grid.col = j;
 					if(!Solve.noConflicts(Grid.grid[i][j])){
+						//Conflict found, grid inputed is invalid
 						return false;
 					}
 				}

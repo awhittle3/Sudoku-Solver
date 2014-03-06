@@ -72,8 +72,10 @@ public class Solve {
 
 	private static boolean rowGood(int n) {
 		for(int j = 0; j < 9; j++){
-			if (Grid.grid[Grid.row][j] == n){
-				return false;
+			if (j != Grid.col){
+				if (Grid.grid[Grid.row][j] == n){
+					return false;
+				}
 			}
 		}
 		return true;
@@ -81,8 +83,10 @@ public class Solve {
 
 	private static boolean colGood(int n) {
 		for(int i = 0; i < 9; i++){
-			if (Grid.grid[i][Grid.col] == n){
-				return false;
+			if (i != Grid.row){
+				if (Grid.grid[i][Grid.col] == n){
+					return false;
+				}
 			}
 		}
 		return true;
@@ -110,8 +114,10 @@ public class Solve {
 		
 		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 3; j++){
-				if(Grid.grid[initI + i][initJ + j] == n){
-					return false;
+				if (initI + i != Grid.row && initJ + j != Grid.col){
+					if(Grid.grid[initI + i][initJ + j] == n){
+						return false;
+					}
 				}
 			}
 		}
